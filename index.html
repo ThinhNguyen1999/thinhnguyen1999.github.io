@@ -405,20 +405,7 @@
       background: linear-gradient(135deg, #f0e7da, #f9f5ee);
     }
 
-    .project-media::after {
-      content: "Preview";
-      position: absolute;
-      top: 1rem;
-      right: 1rem;
-      min-height: 32px;
-      padding: 0.35rem 0.7rem;
-      border-radius: 999px;
-      border: 1px solid rgba(22, 21, 20, 0.1);
-      background: rgba(255, 255, 255, 0.72);
-      color: var(--muted);
-      font-size: 0.76rem;
-      font-weight: 600;
-    }
+
 
     .media-1 {
       background: linear-gradient(135deg, #ece2d2, #faf5ee);
@@ -608,7 +595,7 @@
 
   <header class="site-header">
     <div class="container nav-wrap">
-      <a class="brand" href="#home">[Tên bạn]</a>
+      <a class="brand" href="#home">Thịnh Nguyễn</a>
       <nav class="nav-links" aria-label="Điều hướng chính">
         <a href="#about">Giới thiệu</a>
         <a href="#experience">Kinh nghiệm</a>
@@ -626,7 +613,7 @@
           <h1>Xin chào, tôi là <span>Thịnh</span>.</h1>
           <p>
             Tôi phát triển game với trọng tâm vào trải nghiệm chơi mượt, giao diện rõ ràng và cảm giác tương tác tốt —
-            từ mobile racing đến VR khám phá di sản.
+            từ mobile đến VR khám phá di sản và hệ thống chiến đấu.
           </p>
           <div class="hero-actions">
             <a class="button button-primary" href="#projects">Xem dự án</a>
@@ -706,10 +693,13 @@
             <div class="experience-time">2024 — Hiện tại</div>
             <div class="experience-content experience-content--with-media">
               <div class="experience-media">
-                <img src="Image/Race_HUD.png" alt="Racing Car Screenshot">
+                <a href="https://youtu.be/9De8juN8A48" target="_blank" rel="noopener noreferrer">
+                  <img src="Image/Race_HUD.png" alt="Racing Car Screenshot" style="transition: transform 0.3s ease;">
+                </a>
               </div>
               <div class="experience-copy">
-                <h3>Racing Car</h3>
+                <h3><a href="https://youtu.be/9De8juN8A48" target="_blank" rel="noopener noreferrer"
+                    style="color: inherit; text-decoration: none;">Racing Car</a></h3>
                 <div class="experience-role">Game Developer</div>
                 <p>Phát triển game đua xe mobile với trọng tâm vào gameplay, vật lý xe và luồng trải nghiệm mượt mà trên
                   thiết bị di động.</p>
@@ -777,20 +767,30 @@
 
         <div class="projects-grid">
           <article class="project-card fade-in">
-            <div class="project-media media-1">
-              <div class="project-frame">
-                <small>Moba</small>
-                <strong>Paragon Combat</strong>
-              </div>
+            <div class="project-media media-1" style="padding: 0;">
+              <a href="https://youtu.be/9De8juN8A48" target="_blank" rel="noopener noreferrer"
+                style="display: block; width: 100%; height: 100%;">
+                <img src="Image/paragon.jpg" alt="Paragon Combat" style="width: 100%; height: 100%; object-fit: cover;">
+              </a>
             </div>
             <div class="project-body">
-              <h3>MoBa</h3>
-              <p>Khác với các game MOBA truyền thống góc nhìn từ trên xuống (như LMHT), Paragon cho phép người chơi điều
-                khiển nhân vật góc nhìn thứ ba, mang lại trải nghiệm hành động chân thực hơn.</p>
+              <h3 style="display: flex; align-items: center; gap: 0.75rem;">
+                <a href="https://youtu.be/9De8juN8A48" target="_blank" rel="noopener noreferrer"
+                  style="color: inherit; text-decoration: none;">Paragon</a>
+                <a href="https://youtu.be/9De8juN8A48" target="_blank" rel="noopener noreferrer"
+                  style="font-size: 0.75rem; background: #e52d27; color: white; padding: 0.2rem 0.6rem; border-radius: 6px; text-decoration: none; font-weight: 600;">▶ Click xem video</a>
+              </h3>
+              <p>Đây là một dự án cá nhân nhằm chứng minh khả năng phát triển cơ chế gameplay và hệ thống chiến đấu
+                phức tạp. Sử dụng các tài nguyên chất lượng cao từ tựa game Paragon, tôi đã xây dựng
+                lại hệ thống di chuyển, combo kỹ năng, và AI kẻ địch để tạo ra một trải nghiệm chiến đấu, mặc dù chưa
+                mượt mà và tối ưu.
+              </p>
               <div class="tag-list">
                 <span class="tag">Unreal Engine</span>
                 <span class="tag">C++</span>
-                <span class="tag">Mobile</span>
+                <span class="tag">PC</span>
+                <span class="tag">VFX</span>
+                <span class="tag">Animation</span>
               </div>
             </div>
           </article>
