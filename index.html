@@ -1,0 +1,845 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio – Game Developer</title>
+  <style>
+    :root {
+      --bg: #f6f2ea;
+      --surface: #fffdf8;
+      --surface-strong: #f0e7da;
+      --text: #161514;
+      --muted: #5f5a54;
+      --border: #ddd2c2;
+      --accent: #2f6b5d;
+      --accent-soft: #dfece7;
+      --shadow: 0 20px 50px rgba(22, 21, 20, 0.08);
+      --radius: 24px;
+      --container: 1120px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Inter, "Segoe UI", Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .container {
+      width: min(var(--container), calc(100% - 2rem));
+      margin: 0 auto;
+    }
+
+    section {
+      scroll-margin-top: 96px;
+      padding: 5.5rem 0;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      margin-bottom: 1rem;
+      font-size: 0.78rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .section-heading {
+      max-width: 620px;
+      margin-bottom: 2.5rem;
+    }
+
+    .section-heading h2 {
+      font-size: clamp(2rem, 3.5vw, 3.5rem);
+      line-height: 1.05;
+      margin-bottom: 0.9rem;
+    }
+
+    .section-heading p {
+      color: var(--muted);
+      font-size: 1rem;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(12px);
+      background: rgba(246, 242, 234, 0.88);
+      border-bottom: 1px solid rgba(221, 210, 194, 0.9);
+    }
+
+    .nav-wrap {
+      min-height: 74px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .brand {
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      text-decoration: none;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--muted);
+      font-size: 0.95rem;
+      transition: color 0.2s ease;
+    }
+
+    .nav-links a:hover,
+    .nav-links a:focus-visible {
+      color: var(--text);
+    }
+
+    .hero {
+      padding: 4.5rem 0 5rem;
+    }
+
+    .hero-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(280px, 0.8fr);
+      gap: 2rem;
+      align-items: end;
+    }
+
+    .hero-copy h1 {
+      font-size: clamp(3rem, 7vw, 6.2rem);
+      line-height: 0.95;
+      letter-spacing: -0.05em;
+      margin-bottom: 1rem;
+    }
+
+    .hero-copy h1 span {
+      color: var(--accent);
+    }
+
+    .hero-copy p {
+      max-width: 620px;
+      color: var(--muted);
+      font-size: 1.05rem;
+      margin-bottom: 1.75rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.9rem;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 0.9rem 1.4rem;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      text-decoration: none;
+      font-weight: 600;
+      transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+    }
+
+    .button:hover,
+    .button:focus-visible {
+      transform: translateY(-1px);
+    }
+
+    .button-primary {
+      background: var(--text);
+      color: #fff;
+    }
+
+    .button-secondary {
+      background: transparent;
+      border-color: var(--border);
+      color: var(--text);
+    }
+
+    .hero-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+      box-shadow: var(--shadow);
+    }
+
+    .hero-card-label {
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin-bottom: 0.75rem;
+    }
+
+    .hero-card ul {
+      list-style: none;
+      display: grid;
+      gap: 0.9rem;
+    }
+
+    .hero-card li {
+      padding-top: 0.9rem;
+      border-top: 1px solid var(--border);
+    }
+
+    .hero-card li:first-child {
+      border-top: none;
+      padding-top: 0;
+    }
+
+    .hero-card strong {
+      display: block;
+      margin-bottom: 0.15rem;
+      font-size: 1rem;
+    }
+
+    .hero-card span {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(300px, 0.95fr);
+      gap: 2rem;
+      align-items: start;
+    }
+
+    .about-copy {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 2rem;
+      box-shadow: var(--shadow);
+    }
+
+    .about-copy p+p {
+      margin-top: 1rem;
+    }
+
+    .about-copy p {
+      color: var(--muted);
+      font-size: 1rem;
+    }
+
+    .about-copy strong {
+      color: var(--text);
+    }
+
+    .skills-panel {
+      display: grid;
+      gap: 1rem;
+    }
+
+    .skill-group {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+      box-shadow: var(--shadow);
+    }
+
+    .skill-group h3 {
+      font-size: 1rem;
+      margin-bottom: 0.85rem;
+    }
+
+    .skill-group p {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .experience-list {
+      display: grid;
+      gap: 1rem;
+    }
+
+    .experience-item {
+      display: grid;
+      grid-template-columns: 180px minmax(0, 1fr);
+      gap: 1.25rem;
+      padding: 1.5rem;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .experience-time {
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    .experience-content h3 {
+      font-size: 1.2rem;
+      margin-bottom: 0.25rem;
+    }
+
+    .experience-role {
+      color: var(--accent);
+      font-weight: 600;
+      margin-bottom: 0.8rem;
+    }
+
+    .experience-content p {
+      color: var(--muted);
+      margin-bottom: 1rem;
+    }
+
+    .experience-content--with-media {
+      display: grid;
+      grid-template-columns: minmax(220px, 280px) minmax(0, 1fr);
+      gap: 1.5rem;
+      align-items: center;
+    }
+
+    .experience-media {
+      width: 100%;
+      max-width: 280px;
+      aspect-ratio: 3 / 4;
+      overflow: hidden;
+      border-radius: 18px;
+      border: 1px solid var(--border);
+      box-shadow: 0 10px 24px rgba(58, 38, 21, 0.12);
+      background: rgba(255, 248, 238, 0.9);
+    }
+
+    .experience-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    .experience-copy {
+      min-width: 0;
+    }
+
+    .experience-copy h3,
+    .experience-copy .experience-role,
+    .experience-copy p {
+      margin-top: 0;
+    }
+
+    .tag-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.55rem;
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      min-height: 34px;
+      padding: 0.45rem 0.8rem;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: var(--accent);
+      font-size: 0.84rem;
+      font-weight: 600;
+    }
+
+    .projects {
+      background: rgba(255, 253, 248, 0.65);
+      border-top: 1px solid rgba(221, 210, 194, 0.6);
+      border-bottom: 1px solid rgba(221, 210, 194, 0.6);
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.25rem;
+    }
+
+    .project-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 26px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .project-card:hover,
+    .project-card:focus-within {
+      transform: translateY(-4px);
+      box-shadow: 0 24px 60px rgba(22, 21, 20, 0.12);
+    }
+
+    .project-media {
+      aspect-ratio: 4 / 3;
+      padding: 1.25rem;
+      display: flex;
+      align-items: flex-end;
+      position: relative;
+      background: linear-gradient(135deg, #f0e7da, #f9f5ee);
+    }
+
+    .project-media::after {
+      content: "Preview";
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      min-height: 32px;
+      padding: 0.35rem 0.7rem;
+      border-radius: 999px;
+      border: 1px solid rgba(22, 21, 20, 0.1);
+      background: rgba(255, 255, 255, 0.72);
+      color: var(--muted);
+      font-size: 0.76rem;
+      font-weight: 600;
+    }
+
+    .media-1 {
+      background: linear-gradient(135deg, #ece2d2, #faf5ee);
+    }
+
+    .media-2 {
+      background: linear-gradient(135deg, #dde9e3, #f7faf8);
+    }
+
+    .media-3 {
+      background: linear-gradient(135deg, #e6e0ee, #faf8fc);
+    }
+
+    .project-frame {
+      width: 100%;
+      border-radius: 18px;
+      border: 1px solid rgba(22, 21, 20, 0.08);
+      background: rgba(255, 255, 255, 0.78);
+      padding: 1rem;
+    }
+
+    .project-frame small {
+      display: block;
+      color: var(--muted);
+      margin-bottom: 0.35rem;
+      font-size: 0.8rem;
+    }
+
+    .project-frame strong {
+      display: block;
+      font-size: 1.15rem;
+      line-height: 1.15;
+    }
+
+    .project-body {
+      padding: 1.3rem 1.25rem 1.4rem;
+    }
+
+    .project-body h3 {
+      font-size: 1.2rem;
+      margin-bottom: 0.55rem;
+    }
+
+    .project-body p {
+      color: var(--muted);
+      font-size: 0.96rem;
+      margin-bottom: 1rem;
+    }
+
+    .contact-card {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(280px, 0.9fr);
+      gap: 1.5rem;
+      align-items: stretch;
+      padding: 2rem;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 32px;
+      box-shadow: var(--shadow);
+    }
+
+    .contact-copy h2 {
+      font-size: clamp(2rem, 3.5vw, 3.2rem);
+      line-height: 1.05;
+      margin-bottom: 0.9rem;
+    }
+
+    .contact-copy p {
+      max-width: 560px;
+      color: var(--muted);
+    }
+
+    .contact-links {
+      display: grid;
+      gap: 0.85rem;
+    }
+
+    .contact-link {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 0.2rem;
+      padding: 1rem 1.1rem;
+      border-radius: 20px;
+      border: 1px solid var(--border);
+      text-decoration: none;
+      background: #fff;
+      transition: border-color 0.2s ease, transform 0.2s ease;
+    }
+
+    .contact-link:hover,
+    .contact-link:focus-visible {
+      transform: translateY(-2px);
+      border-color: #bcae97;
+    }
+
+    .contact-link strong {
+      font-size: 0.95rem;
+    }
+
+    .contact-link span {
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    footer {
+      padding: 1.6rem 0 2.6rem;
+    }
+
+    .footer-wrap {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .fade-in {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.65s ease, transform 0.65s ease;
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (max-width: 980px) {
+
+      .hero-layout,
+      .about-grid,
+      .contact-card,
+      .experience-item,
+      .experience-content--with-media {
+        grid-template-columns: 1fr;
+      }
+
+      .projects-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 720px) {
+      .nav-wrap {
+        min-height: auto;
+        padding: 1rem 0;
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .nav-links {
+        flex-wrap: wrap;
+        gap: 0.85rem 1.1rem;
+      }
+
+      section {
+        padding: 4.25rem 0;
+      }
+
+      .hero {
+        padding-top: 2.75rem;
+      }
+
+      .hero-card,
+      .about-copy,
+      .skill-group,
+      .experience-item,
+      .project-card,
+      .contact-card {
+        border-radius: 22px;
+      }
+
+      .projects-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-card {
+        padding: 1.5rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a class="brand" href="#home">[Tên bạn]</a>
+      <nav class="nav-links" aria-label="Điều hướng chính">
+        <a href="#about">Về tôi</a>
+        <a href="#experience">Kinh nghiệm</a>
+        <a href="#projects">Dự án</a>
+        <a href="#contact">Liên hệ</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="container hero-layout">
+        <div class="hero-copy">
+          <span class="eyebrow">Game Player Portfolio</span>
+          <h1>Xin chào, tôi là <span>Thịnh</span>.</h1>
+          <p>
+            Tôi phát triển game với trọng tâm vào trải nghiệm chơi mượt, giao diện rõ ràng và cảm giác tương tác tốt —
+            từ mobile racing đến VR khám phá di sản.
+          </p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#projects">Xem dự án</a>
+            <a class="button button-secondary" href="#contact">Liên hệ</a>
+          </div>
+        </div>
+
+        <aside class="hero-card fade-in">
+          <div class="hero-card-label">Tóm tắt nhanh</div>
+          <ul>
+            <li>
+              <strong>Chuyên môn</strong>
+              <span>Unreal Engine, C++, Mobile Game, VR</span>
+            </li>
+            <li>
+              <strong>Dự án nổi bật</strong>
+              <span>Racing Car, Student Rush, Hội An Kiến Sự</span>
+            </li>
+            <li>
+              <strong>Mục tiêu</strong>
+              <span>Tạo ra sản phẩm có gameplay rõ ràng và trải nghiệm đáng nhớ.</span>
+            </li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container">
+        <div class="section-heading fade-in">
+          <span class="eyebrow">About</span>
+          <h2>Giới thiệu ngắn gọn về tôi.</h2>
+          <p>Tôi giữ nội dung súc tích, dễ đọc và tập trung vào những gì mình đã làm trong các dự án game thực tế.</p>
+        </div>
+
+        <div class="about-grid">
+          <div class="about-copy fade-in">
+            <p>
+              Tôi là một <strong>Game Developer</strong> yêu thích việc biến ý tưởng thành những trải nghiệm có thể chơi
+              được, dễ tiếp cận và mang lại cảm giác thú vị cho người dùng.
+            </p>
+            <p>
+              Tôi từng tham gia các dự án từ game mobile đến VR, luôn chú trọng vào gameplay, hiệu năng và cách người
+              chơi tương tác với từng chi tiết trong game.
+            </p>
+            <p>
+              Hiện tại tôi đang tiếp tục phát triển kỹ năng thông qua các dự án như <strong>Racing Car</strong>, đồng
+              thời mở rộng tư duy thiết kế trải nghiệm trong game hiện đại.
+            </p>
+          </div>
+
+          <div class="skills-panel">
+            <div class="skill-group fade-in">
+              <h3>Game Development</h3>
+              <p>Unreal Engine, gameplay systems, UI trong game và tối ưu trải nghiệm chơi trên thiết bị di động.</p>
+            </div>
+            <div class="skill-group fade-in">
+              <h3>Tech Stack</h3>
+              <p>C#, Git/GitHub, tư duy tổ chức code rõ ràng, ưu tiên cấu trúc dễ mở rộng và dễ bảo trì.</p>
+            </div>
+            <div class="skill-group fade-in">
+              <h3>Focus Areas</h3>
+              <p>Mobile game, VR development, cảm giác điều khiển, nhịp độ gameplay và trải nghiệm người chơi.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="experience">
+      <div class="container">
+        <div class="section-heading fade-in">
+          <span class="eyebrow">Experience</span>
+          <h2>Kinh nghiệm qua các dự án.</h2>
+          <p>Mỗi dự án giúp tôi rèn luyện cách xây gameplay, tối ưu tương tác và hoàn thiện tư duy phát triển game.</p>
+        </div>
+
+        <div class="experience-list">
+          <article class="experience-item fade-in">
+            <div class="experience-time">2024 — Hiện tại</div>
+            <div class="experience-content">
+              <h3>Racing Car</h3>
+              <div class="experience-role">Game Developer</div>
+              <p>Phát triển game đua xe mobile với trọng tâm vào gameplay, vật lý xe và luồng trải nghiệm mượt mà trên
+                thiết bị di động.</p>
+              <div class="tag-list">
+                <span class="tag">Unrealy</span>
+                <span class="tag">C++</span>
+                <span class="tag">Mobile</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="experience-item fade-in">
+            <div class="experience-time">2023 — 2024</div>
+            <div class="experience-content experience-content--with-media">
+              <div class="experience-media">
+                <img src="Image/StudentRush_1.png" alt="Student Rush Screenshot">
+              </div>
+              <div class="experience-copy">
+                <h3>Student Rush</h3>
+                <div class="experience-role">Game Developer</div>
+                <p>Xây dựng game mobile với gameplay năng động, đồng thời chú ý tới hiệu năng và khả năng chạy ổn định
+                  trên nhiều thiết bị.</p>
+                <div class="tag-list">
+                  <span class="tag">Unreal</span>
+                  <span class="tag">C++</span>
+                  <span class="tag">Mobile</span>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="experience-item fade-in">
+            <div class="experience-time">2022 — 2023</div>
+            <div class="experience-content">
+              <h3>Hội An Kiến Sự</h3>
+              <div class="experience-role">VR Developer</div>
+              <p>Tham gia phát triển trải nghiệm VR lấy cảm hứng từ di sản Hội An, đưa người chơi vào không gian lịch sử
+                theo cách trực quan hơn.</p>
+              <div class="tag-list">
+                <span class="tag">Unreal</span>
+                <span class="tag">VR</span>
+                <span class="tag">C#</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="projects" id="projects">
+      <div class="container">
+        <div class="section-heading fade-in">
+          <span class="eyebrow">Projects</span>
+          <h2>Dự án GamePlay Combat.</h2>
+          <p>Phần này được làm theo hướng trực quan hơn để sau này bạn có thể thay placeholder bằng screenshot thật của
+            từng game.</p>
+        </div>
+
+        <div class="projects-grid">
+          <article class="project-card fade-in">
+            <div class="project-media media-1">
+              <div class="project-frame">
+                <small>Moba</small>
+                <strong>Paragon Combat</strong>
+              </div>
+            </div>
+            <div class="project-body">
+              <h3>Racing Car</h3>
+              <p>Game đua xe mobile tập trung vào cảm giác lái, nhịp độ trận đấu và trải nghiệm điều khiển rõ ràng.</p>
+              <div class="tag-list">
+                <span class="tag">Unreal</span>
+                <span class="tag">C#</span>
+                <span class="tag">Mobile</span>
+              </div>
+            </div>
+          </article>
+
+
+
+
+
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <div class="contact-card fade-in">
+          <div class="contact-copy">
+            <span class="eyebrow">Contact</span>
+            <h2>Nếu bạn muốn trao đổi về dự án game, hãy liên hệ với tôi.</h2>
+
+          </div>
+
+          <div class="contact-links">
+            <a class="contact-link" href="https://mail.google.com/mail/u/0/?tab=rm&ogbl#inbox">
+              <strong>Email</strong>
+              <span>nguyencducthinh.com</span>
+            </a>
+            <a class="contact-link" href="tel:+84123456789">
+              <strong>Số điện thoại</strong>
+              <span>+84 946503207</span>
+            </a>
+            <a class="contact-link" href="#home">
+              <strong>Tên hiển thị</strong>
+              <span>Nguyễn Cửu Đức Thịnh</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-wrap">
+      <div>[Tên bạn]</div>
+      <div>Portfolio game developer · 2026</div>
+    </div>
+  </footer>
+
+  <script>
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll('.fade-in').forEach(element => observer.observe(element));
+  </script>
+</body>
+
+</html>
