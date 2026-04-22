@@ -610,7 +610,7 @@
     <div class="container nav-wrap">
       <a class="brand" href="#home">[Tên bạn]</a>
       <nav class="nav-links" aria-label="Điều hướng chính">
-        <a href="#about">Về tôi</a>
+        <a href="#about">Giới thiệu</a>
         <a href="#experience">Kinh nghiệm</a>
         <a href="#projects">Dự án</a>
         <a href="#contact">Liên hệ</a>
@@ -683,10 +683,7 @@
               <h3>Game Development</h3>
               <p>Unreal Engine, gameplay systems, UI trong game và tối ưu trải nghiệm chơi trên thiết bị di động.</p>
             </div>
-            <div class="skill-group fade-in">
-              <h3>Tech Stack</h3>
-              <p>C#, Git/GitHub, tư duy tổ chức code rõ ràng, ưu tiên cấu trúc dễ mở rộng và dễ bảo trì.</p>
-            </div>
+
             <div class="skill-group fade-in">
               <h3>Focus Areas</h3>
               <p>Mobile game, VR development, cảm giác điều khiển, nhịp độ gameplay và trải nghiệm người chơi.</p>
@@ -713,7 +710,7 @@
               <p>Phát triển game đua xe mobile với trọng tâm vào gameplay, vật lý xe và luồng trải nghiệm mượt mà trên
                 thiết bị di động.</p>
               <div class="tag-list">
-                <span class="tag">Unrealy</span>
+                <span class="tag">Unreal Engine</span>
                 <span class="tag">C++</span>
                 <span class="tag">Mobile</span>
               </div>
@@ -732,7 +729,7 @@
                 <p>Xây dựng game mobile với gameplay năng động, đồng thời chú ý tới hiệu năng và khả năng chạy ổn định
                   trên nhiều thiết bị.</p>
                 <div class="tag-list">
-                  <span class="tag">Unreal</span>
+                  <span class="tag">Unreal Engine</span>
                   <span class="tag">C++</span>
                   <span class="tag">Mobile</span>
                 </div>
@@ -742,15 +739,20 @@
 
           <article class="experience-item fade-in">
             <div class="experience-time">2022 — 2023</div>
-            <div class="experience-content">
-              <h3>Hội An Kiến Sự</h3>
-              <div class="experience-role">VR Developer</div>
-              <p>Tham gia phát triển trải nghiệm VR lấy cảm hứng từ di sản Hội An, đưa người chơi vào không gian lịch sử
-                theo cách trực quan hơn.</p>
-              <div class="tag-list">
-                <span class="tag">Unreal</span>
-                <span class="tag">VR</span>
-                <span class="tag">C#</span>
+            <div class="experience-content experience-content--with-media">
+              <div class="experience-media">
+                <img src="Image/HoiAn.jpg" alt="Hội An Kiến Sự Screenshot">
+              </div>
+              <div class="experience-copy">
+                <h3>Hội An Kiến Sự</h3>
+                <div class="experience-role">VR Developer</div>
+                <p>Tham gia phát triển trải nghiệm VR lấy cảm hứng từ di sản Hội An, đưa người chơi vào không gian lịch sử
+                  theo cách trực quan hơn.</p>
+                <div class="tag-list">
+                  <span class="tag">Unreal Engine</span>
+                  <span class="tag">VR</span>
+                  <span class="tag">C#</span>
+                </div>
               </div>
             </div>
           </article>
@@ -776,11 +778,12 @@
               </div>
             </div>
             <div class="project-body">
-              <h3>Racing Car</h3>
-              <p>Game đua xe mobile tập trung vào cảm giác lái, nhịp độ trận đấu và trải nghiệm điều khiển rõ ràng.</p>
+              <h3>MoBa</h3>
+              <p>Khác với các game MOBA truyền thống góc nhìn từ trên xuống (như LMHT), Paragon cho phép người chơi điều
+                khiển nhân vật góc nhìn thứ ba, mang lại trải nghiệm hành động chân thực hơn.</p>
               <div class="tag-list">
-                <span class="tag">Unreal</span>
-                <span class="tag">C#</span>
+                <span class="tag">Unreal Engine</span>
+                <span class="tag">C++</span>
                 <span class="tag">Mobile</span>
               </div>
             </div>
@@ -804,9 +807,10 @@
           </div>
 
           <div class="contact-links">
-            <a class="contact-link" href="https://mail.google.com/mail/u/0/?tab=rm&ogbl#inbox">
+            <a class="contact-link" href="javascript:void(0)"
+              onclick="navigator.clipboard.writeText('nguyencducthinh@gmail.com'); const s = this.querySelector('span'); const orig = s.innerText; s.innerText = 'Đã copy!'; setTimeout(() => s.innerText = orig, 200);">
               <strong>Email</strong>
-              <span>nguyencducthinh.com</span>
+              <span>nguyencducthinh@gmail.com</span>
             </a>
             <a class="contact-link" href="tel:+84123456789">
               <strong>Số điện thoại</strong>
@@ -824,7 +828,7 @@
 
   <footer>
     <div class="container footer-wrap">
-      <div>[Tên bạn]</div>
+      <div>Thinh Nguyen</div>
       <div>Portfolio game developer · 2026</div>
     </div>
   </footer>
